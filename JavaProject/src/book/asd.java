@@ -819,15 +819,6 @@ public class asd extends JFrame{
 		
 }
 
-		
-        
-	
-
-
-
-	
-
-
 	public static void main(String[] args) {
 		
 		new asd();
