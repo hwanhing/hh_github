@@ -102,8 +102,8 @@ public class Hunt_info extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 						setVisible(false);
-					}
-				});
+				}
+			});
 	}
 
 }
