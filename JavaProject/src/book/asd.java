@@ -325,16 +325,8 @@ public class asd extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Cinema_DTO dto = new Cinema_DTO();
-				String movieName = null;
-				String cinemaName = null;
-
-
-				dto.setmovieName(movieName);
-				dto.setcinemaName(cinemaName);
-
+			
 				
-				JOptionPane.showMessageDialog(null, "영화정보저장");
 			}
 		});
 		

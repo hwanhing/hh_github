@@ -5,6 +5,8 @@ import java.sql.*;
 import java.awt.event.*;
 import book.asd;
 import login.LoginMember_DTO;
+import login.SignIn;
+import login.SignUp;
 import pay.PaymentPage;
 
 public class Mainpage extends JFrame {
@@ -214,6 +216,17 @@ public class Mainpage extends JFrame {
 		loginoutbtn.setBorder(null);
 		loginoutbtn.setContentAreaFilled(false);
 		
+		// 로그아웃 버튼 이벤트처리
+		loginoutbtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				SignIn signin = new SignIn();
+				SignIn.main(null);
+				setVisible(false);
+			}
+		});
+		
 		// 이벤트 처리 (헌트 영화 예매하기) ----------------------------------------------------------------------
 		button_1.addActionListener(new ActionListener() {
 
@@ -225,7 +238,6 @@ public class Mainpage extends JFrame {
     				asd asd = new asd();
     				asd.jtf1.setText("헌트");
     				asd.call();
-    				insert();
     				setVisible(false);
             	}else {
             		MainFrame();
@@ -418,13 +430,6 @@ public class Mainpage extends JFrame {
 			}
 			
 		});
-		}
-		void insert() {
-			String moviename = "한산";
-			
-			Cinema_DTO cindto = new Cinema_DTO();
-			
-			cindto.setmovieName(moviename);
-			
-     }
+	}
+
 }
