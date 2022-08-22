@@ -42,12 +42,13 @@ public class Mainpage extends JFrame {
 		setBounds(500,90 , 700, 900);
 		getContentPane().setLayout(null);
 		
-		JButton inbutton = new JButton("영화입장권");
-		inbutton.setForeground(Color.BLACK);
-		inbutton.setFont(new Font("Lucida Grande", Font.BOLD, 13));
-		inbutton.setBounds(575, 57, 93, 27);
+		JButton inbutton = new JButton("영화관람권\r티켓");
+		inbutton.setIcon(new ImageIcon(Mainpage.class.getResource("/img/ticket_logo1.png")));
+		inbutton.setBackground(Color.WHITE);
+		inbutton.setForeground(Color.WHITE);
+		inbutton.setFont(new Font("HY헤드라인M", Font.PLAIN, 13));
+		inbutton.setBounds(577, 25, 96, 85);
 		getContentPane().add(inbutton);
-		inbutton.setContentAreaFilled(false);		// 버튼 배경 투명하게 하는것.
 		inbutton.setBorder(null); 					// 버튼 테두리 없애는것.
 		
 		JPanel panel = new JPanel();
@@ -193,23 +194,25 @@ public class Mainpage extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(Mainpage.class.getResource("/img/tmplogo.png")));
-		lblNewLabel.setBounds(22, 10, 213, 98);
+		lblNewLabel.setBounds(22, 15, 213, 98);
 		getContentPane().add(lblNewLabel);
 		
 		JLabel namelabel = new JLabel("New label");
-		namelabel.setBounds(415, 55, 135, 35);
+		namelabel.setBounds(449, 46, 109, 35);
 		getContentPane().add(namelabel);
 
 		// 로그인된 회원정보 라벨에 불러오기.
 		LoginMember_DTO dto = new LoginMember_DTO();
-		String name = dto.getMemberName();
+		String name = (dto.getMemberName() + "님");
 		namelabel.setText(name);
-		namelabel.setFont(new Font("Lucida Grande", Font.BOLD, 18));
+		namelabel.setFont(new Font("HY헤드라인M", Font.PLAIN, 18));
 		
-		JLabel lblNewLabel_1 = new JLabel("회원명 : ");
-		lblNewLabel_1.setFont(new Font("굴림", Font.BOLD, 19));
-		lblNewLabel_1.setBounds(340, 55, 75, 35);
-		getContentPane().add(lblNewLabel_1);
+		JButton loginoutbtn = new JButton("로그아웃");
+		loginoutbtn.setFont(new Font("HY헤드라인M", Font.PLAIN, 12));
+		loginoutbtn.setBounds(397, 81, 157, 23);
+		getContentPane().add(loginoutbtn);
+		loginoutbtn.setBorder(null);
+		loginoutbtn.setContentAreaFilled(false);
 		
 		// 이벤트 처리 (헌트 영화 예매하기) ----------------------------------------------------------------------
 		button_1.addActionListener(new ActionListener() {
