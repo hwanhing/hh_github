@@ -1,4 +1,5 @@
 package main;
+
 import javax.swing.*;
 import java.awt.*;
 import java.sql.*;
@@ -6,7 +7,6 @@ import java.awt.event.*;
 import book.asd;
 import login.LoginMember_DTO;
 import login.SignIn;
-import login.SignUp;
 import pay.PaymentPage;
 
 public class Mainpage extends JFrame {
@@ -44,7 +44,7 @@ public class Mainpage extends JFrame {
 		setBounds(500,90 , 700, 900);
 		getContentPane().setLayout(null);
 		
-		JButton inbutton = new JButton("영화관람권\r티켓");
+		JButton inbutton = new JButton("영화관람권 티켓");
 		inbutton.setIcon(new ImageIcon(Mainpage.class.getResource("/img/ticket_logo1.png")));
 		inbutton.setBackground(Color.WHITE);
 		inbutton.setForeground(Color.WHITE);
@@ -60,7 +60,7 @@ public class Mainpage extends JFrame {
 		panel.setLayout(null);
 		
 		// 영화 한트 이미지.
-		JLabel hunt = new JLabel("영화 한트");
+		JLabel hunt = new JLabel("영화 헌트");
 		hunt.setIcon(new ImageIcon(Mainpage.class.getResource("/img/movie_image_hunt.jpg")));
 		hunt.setBounds(23, 15, 194, 260);
 		panel.add(hunt);
@@ -308,6 +308,7 @@ public class Mainpage extends JFrame {
             	if(result == JOptionPane.YES_OPTION) {
     				asd asd = new asd();
     				asd.jtf1.setText("미니언즈2");
+    				PaymentPage page = new PaymentPage();
     				asd.call();
     				setVisible(false);
             	}else {
@@ -419,17 +420,16 @@ public class Mainpage extends JFrame {
 			}
 		});
 		
-		//예매확인 이벤트 처리
+		//예매영화표 이벤트 처리
 		inbutton.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				PaymentPage page = new PaymentPage();
-				
-				
+				PaymentPage paymentPage = new PaymentPage();
 			}
 			
 		});
+	
 	}
 
 }

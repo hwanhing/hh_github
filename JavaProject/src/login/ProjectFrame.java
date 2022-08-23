@@ -28,11 +28,11 @@ public class ProjectFrame {
 	public Font font_small = new Font("Lucida Grande", Font.PLAIN, 12);
 	
 	// 뒤로가기 버튼
-	JButton btn_back = new JButton(new ImageIcon("src/img/back3.png")); 
+	public JButton btn_back = new JButton(new ImageIcon("src/img/back3.png")); 
 	
 	// 아이디찾기, 비밀번호 찾기 페이지 로고
 	ImageIcon icon_logo_small = new ImageIcon("src/img/tmplogo_small.png");
-	JLabel logo = new JLabel("");
+	public JLabel logo = new JLabel("");
 
 	// 회원가입하기, 아이디찾기, 비밀번호 찾기 로그인 페이지에 있는 버튼 프레임(텍스트색상 : 디폴트)
 	JButton btn_gray_frame;
@@ -59,7 +59,7 @@ public class ProjectFrame {
 	}
 	
 	// 뒤로가기 버튼
-	void frameBackBtn(){
+	public void frameBackBtn(){
 		btn_back.setBounds(22, 30, 70, 70);
 		btn_back.setBorder(null);
 		btn_back.setContentAreaFilled(false); 				// 버튼 투명하게
@@ -86,7 +86,7 @@ public class ProjectFrame {
 	}
 	
 	// 아이디찾기, 비밀번호 찾기 페이지 로고
-	void frameLogoSmall() {
+	public void frameLogoSmall() {
 		logo.setIcon(icon_logo_small);
 		logo.setBounds(295, 180, 244, 115);
 		frame.getContentPane().add(logo);

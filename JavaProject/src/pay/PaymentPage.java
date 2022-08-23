@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 import java.sql.*;
 
 import login.LoginMember_DTO;
-import main.Cinema_DTO;
+import pay.Cinema_DTO;
 
 import javax.swing.*;
 
@@ -77,16 +77,17 @@ public class PaymentPage extends JFrame{
 		//임시
 		//가능하면 DTO에서 저장된 정보를 가져와서 사용
 		movieAge = "12세";
-		movieName="매버릭";
+		movieName= "매버릭";
 		cinemaDate="2022/08/18";
 		cinemaTime="15:00";
 		cinemaRoom="1관";
 		seatPosition="F12";
 		totalNum=1;
 //		cinemaName= Cinema_DTO.getcinemaName();
-//		movieName = Cinema_DTO.getmovieName();
+//		movieName = Cinema_DTO.getMovieName();
 //		cinemaDate = Cinema_DTO.getcinemaDate();
 //		cinemaTime = Cinema_DTO.getcinemaRoom();
+		
 
 		JLabel jl1 = new JLabel("<html><head><center><p style=\"font-size:40px\">영화관람권</p></center></head>"
 		+"<body><left>"+"===================================<br>"+movieAge+"이상관람가<br>"
@@ -121,16 +122,18 @@ public class PaymentPage extends JFrame{
 		jl1_1.setBounds(5, 5, 0, 0);
 		jl1_1.setFont(new Font("Serif", Font.PLAIN, 17));
 		Cinema_DTO dto = new Cinema_DTO();
-		String name = dto.getmovieName();
+		String name = dto.getMovieName();
 		container2_1.setLayout(null);
 		jl1_1.setText(name);
 		container2_1.add(jl1_1);
+		
 		
 		setBounds(500,90,700,900);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		setVisible(true);
+		
 		
 		//뒤로가기
 		button1.addActionListener(new ActionListener() {
@@ -156,4 +159,6 @@ public class PaymentPage extends JFrame{
 			}
 		});
 	}
+
+
 }
